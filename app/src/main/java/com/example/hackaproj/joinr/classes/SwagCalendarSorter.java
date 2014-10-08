@@ -15,7 +15,7 @@ public final class SwagCalendarSorter {
 	 */
 	private SwagCalendarSorter() {
 	}
-
+/*
 	public static Comparator<Event> eventComparator = new Comparator<Event>() {
 
 		@Override
@@ -46,7 +46,7 @@ public final class SwagCalendarSorter {
 				return startTimeComp;
 			}
 		}
-	};
+	}; */
 	public static Comparator<String> userIdComparator = new Comparator<String>() {
 		@Override
 		public int compare(String u1, String u2){
@@ -63,9 +63,9 @@ public final class SwagCalendarSorter {
 			int availabilityComp = u1.getStatusId() - u2.getStatusId();
 			if(availabilityComp == 0) //Sort first on availability type
 			{
-				int durationComp = u1.getEventList().get(0).getEnd().compareTo(u2.getEventList().get(0).getEnd());
-				if(durationComp == 0) //Sort second on duration of availability
-				{
+				//int durationComp = u1.getCurrentEvent().getEnd().compareTo(u2.getCurrentEvent().getEnd());
+				//if(durationComp == 0) //Sort second on duration of availability
+				//{
 					int userNameComp = u1.getName().compareTo(u2.getName());
 					if(userNameComp == 0) //Sort third on username alphabetical
 					{
@@ -75,11 +75,11 @@ public final class SwagCalendarSorter {
 					{
 						return userNameComp;
 					}
-				}
-				else
-				{
-					return durationComp;
-				}
+				//}
+				//else
+				//{
+				//	return durationComp;
+				//}
 			}
 			else
 			{
